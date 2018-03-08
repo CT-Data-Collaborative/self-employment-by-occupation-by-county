@@ -1,0 +1,330 @@
+{
+  "name": "self-employment-by-occupation-by-county",
+  "datapackage_version": "1.0-beta.18",
+  "title": "Self-Employment by Occupation by County",
+  "description": "Self-Employment by Occupation by County reports the size of the employed population of civilian workers aged 16 years and older, by business type and occupation, including management, sales, and production occupations.",
+  "version": "1.0",
+  "licenses": [{
+    "url": "http://opendatacommons.org/licenses/pddl/",
+    "name": "Open Data Commons Public Domain",
+    "version": "1.0",
+    "id": "odc-pddl"
+  }],
+  "sources": [{
+    "name": "uscensus",
+    "web": ""
+  }],
+  "author":[{
+    "name": "Jenna Daly",
+    "email": "jdaly@ctdata.org",
+    "web": "http://ctdata.org"
+  }],
+  "contributor": [],
+  "resources": [{
+    "path": "data/self-employment-occupation-county.csv",
+    "format": "csv",
+    "schema": {
+      "fields": [{
+          "name": "County",
+          "type": "string",
+          "dimension": false
+        }, {
+          "name": "FIPS",
+          "type": "string",
+          "dimension": false
+        }, {
+          "name": "Year",
+          "type": "string",
+          "dimension": false
+        }, {
+          "name": "Occupation",
+          "type": "string",
+          "dimension": true,
+          "constraints": {
+            "enum": ["All", 
+                     "Management, business, science, and arts", 
+                     "Service",
+                     "Sales and office", 
+                     "Natural resources, construction, and maintenance",
+                     "Production, transportation, and material moving"]
+         }
+        }, {         
+          "name": "Business Type",
+          "type": "string",
+          "dimension": true,
+          "constraints": {
+            "enum": ["Total",
+                     "Self-Employed, Incorporated",
+                     "Self-Employed, Not Incorporated",
+                     "Government",
+                     "Private, Profit",
+                     "Private, Not-for-profit"]
+         }
+        }, {
+          "name": "Measure Type",
+          "type": "string",
+          "dimension": true,
+          "constraints": {
+            "enum": ["Number", "Percent"]
+         }
+        }, {
+          "name": "Variable",
+          "type": "string",
+          "dimension": true,
+          "constraints": {
+            "enum": ["Employment", "Margins of Error"]
+         }
+        }, {
+          "name": "Value",
+          "type": "number",
+          "dimension": false
+        }]
+      }
+    }
+  ],
+  "last_modified": "03/07/2018",
+  "ckan_extras": {
+    "full_description": {
+      "ckan_name": "Full Description",
+      "value": "Self-Employment by Occupation by County reports the total population of employed civilian workers aged 16 years and older by occupation. Business Types are presented as percentages of a given occupation for a given county. For example, for 2012-2016, there were approximately 320,110 Service employees in Connecticut, 14.6% of those employees worked in Government. 'Self-Employed, Incorporated' includes workers in their own incorporated businesses, 'Self-Employed, Not Incorporated' includes workers in their own non-incorporated businesses and unpaid family workers, 'Government' includes local, state, and federal government workers, 'Private, Profit' includes employees of for-profit private companies, 'Private, Not-for-profit' includes both wage and salary employees of not-for-profit private companies. These data originate from the American Community Survey (ACS) 5-Year estimates, table S2406.",
+      "type": "string"
+    },
+    "suppression": {
+      "ckan_name": "Suppression",
+      "value": "Suppressed estimates indicate that either no sample observations or too few sample observations were available to compute an estimate. Suppressed Margins of Error indicate that the median falls in the lowest interval or upper interval of an open-ended distribution, therefore a statistical test is not appropriate.",
+      "type": "string"
+    },
+    "technical_notes": {
+      "ckan_name": "Technical Notes",
+      "value": "",
+      "type": "string"
+    },
+    "socrata": {
+      "ckan_name": "Socrata",
+      "value": "False",
+      "type": "string"
+    },
+    "socrata_url": {
+      "ckan_name": "Socrata Dataset URL",
+      "value": "",
+      "type": "string"
+    },
+    "socrata_dataset_name": {
+      "ckan_name": "Socrata Dataset Name",
+      "value": "",
+      "type": "string"
+    }, 
+    "domain": {
+      "ckan_name": "Domain",
+      "value": "Economy",
+      "type": "string"
+    },
+    "subdomain": {
+      "ckan_name": "Subdomain",
+      "value": "Employment",
+      "type": "string"
+    },
+    "numerator": {
+      "ckan_name": "Numerator",
+      "value": "Total employed population for a given business type.",
+      "type": "string"
+    },
+    "denominator": {
+      "ckan_name": "Denominator",
+      "value": "Total employed population for a given occupation.",
+      "type": "string"
+    },
+    "geography": {
+      "ckan_name": "Geography",
+      "value": "County",
+      "type": "string",
+      "constraints": {"enum": ["Town", "County", "Town/County", "District", "Other"]}
+    },
+    "frequency": {
+      "ckan_name": "Frequency",
+      "value": "Annual",
+      "type": "string"
+    },
+    "years_in_catalog": {
+      "ckan_name": "Years in Catalog",
+      "value": ["2006-2010", "2007-2011", "2008-2012", "2009-2013", "2010-2014", "2011-2015", "2012-2016"],
+      "type": "array"
+    },
+    "latest_year": {
+      "ckan_name": "Latest Year Available",
+      "value": "2012-2016",
+      "type": "string"
+    },
+    "disabled_views": {
+      "ckan_name": "Disabled Views",
+      "value": [],
+      "type": "array",
+      "constraints": {"enum": ["map", "table", "bar", "line"]}
+    },
+    "units": {
+      "ckan_name": "Units",
+      "value": {
+        "Number": "",
+        "Percent": "%"
+      }
+    },
+    "expected_number_of_geographies": {
+      "ckan_name": "Expected Number of Unique Geographies",
+      "value": 9,
+      "type": "string"
+    },     
+    "default": {      
+      "ckan_name": "Default",
+      "value": {
+        "County": "Connecticut",
+        "Year": ["2012-2016"],
+        "Occupation": ["All"],
+        "Business Type": ["Self-Employed, Incorporated", "Self-Employed, Not Incorporated"],
+        "Variable": "Employment"
+      },
+      "type": "object"
+    } 
+  },
+  "spot_checks": [
+    {
+      "type": "$lookup",
+      "filter": {
+        "County": "Litchfield County",
+        "Year":	"2006-2010",
+        "Variable":	"Employment",
+        "Business Type": "Government",
+        "Occupation": "All",
+        "Measure Type":	"Percent"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 12.4
+      } 
+    }, 
+    {
+      "type": "$lookup",
+      "filter": {
+        "County": "Hartford County",
+        "Year":	"2007-2011",
+        "Variable":	"Margins of Error",
+        "Business Type": "Self-Employed, Incorporated",
+        "Occupation": "Management, business, science, and arts",
+        "Measure Type":	"Percent"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 0.3
+      } 
+    }, 
+    {
+      "type": "$lookup",
+      "filter": {
+        "County": "Tolland County",
+        "Year":	"2008-2012",
+        "Variable":	"Employment",
+        "Business Type": "Private, Profit",
+        "Occupation": "Service",
+        "Measure Type":	"Percent"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 58
+      } 
+    }, 
+    {
+      "type": "$lookup",
+      "filter": {
+        "County": "Windham County",
+        "Year":	"2009-2013",
+        "Variable":	"Margins of Error",
+        "Business Type": "Total",
+        "Occupation": "Sales and office",
+        "Measure Type":	"Number"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "int",
+        "value": 796
+      } 
+    }, 
+    {
+      "type": "$lookup",
+      "filter": {
+        "County": "New London County",
+        "Year":	"2010-2014",
+        "Variable":	"Employment",
+        "Business Type": "Self-Employed, Not Incorporated",
+        "Occupation": "Natural resources, construction, and maintenance",
+        "Measure Type":	"Percent"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 13.2
+      } 
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "County": "Middlesex County",
+        "Year":	"2011-2015",
+        "Variable":	"Margins of Error",
+        "Business Type": "Private, Not-for-profit",
+        "Occupation": "Production, transportation, and material moving",
+        "Measure Type":	"Percent"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 1.4
+      } 
+    }, 
+    {
+      "type": "$lookup",
+      "filter": {
+        "County": "New Haven County",
+        "Year":	"2012-2016",
+        "Variable":	"Employment",
+        "Business Type": "Total",
+        "Occupation": "All",
+        "Measure Type":	"Number"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "int",
+        "value": 421566
+      } 
+    }
+  ],
+  "dimension_groups": [
+     {
+       "Measure Type": ["Number"], 
+       "Business Type": ["Total"],
+       "Occupation": ["All", 
+                      "Management, business, science, and arts", 
+                      "Service",
+                      "Sales and office", 
+                      "Natural resources, construction, and maintenance",
+                      "Production, transportation, and material moving"],
+       "Variable": ["Employment", "Margins of Error"]     
+     }, 
+     {
+       "Measure Type": ["Percent"], 
+       "Business Type": ["Self-Employed, Incorporated",
+                         "Self-Employed, Not Incorporated",
+                         "Government",
+                         "Private, Profit",
+                         "Private, Not-for-profit"],
+       "Occupation": ["All", 
+                      "Management, business, science, and arts", 
+                      "Service",
+                      "Sales and office", 
+                      "Natural resources, construction, and maintenance",
+                      "Production, transportation, and material moving"],
+       "Variable": ["Employment", "Margins of Error"]     
+     }
+  ]
+}
