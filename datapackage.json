@@ -180,7 +180,8 @@
         "Year": ["2012-2016"],
         "Occupation": ["All"],
         "Business Type": ["Self-Employed, Incorporated", "Self-Employed, Not Incorporated"],
-        "Variable": "Employment"
+        "Variable": "Employment", 
+        "Measure Type": "Percent"
       },
       "type": "object"
     } 
@@ -193,7 +194,6 @@
         "Year":	"2006-2010",
         "Variable":	"Employment",
         "Business Type": "Government",
-        "Occupation": "All",
         "Measure Type":	"Percent"
       },
       "expected": {
