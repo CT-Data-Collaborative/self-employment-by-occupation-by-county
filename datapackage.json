@@ -2,7 +2,7 @@
   "name": "self-employment-by-occupation-by-county",
   "datapackage_version": "1.0-beta.18",
   "title": "Self-Employment by Occupation by County",
-  "description": "Self-Employment by Occupation by County reports the size of the employed population of civilian workers aged 16 years and older, by business type and occupation, including management, sales, and production occupations.",
+  "description": "Self-Employment by Occupation by County reports the size of the employed population of civilian workers aged 16 years and older, by business type and occupation, including management, sales, and production occupations. In the Business Type column, individual Business Types are presented as percentages of the Total employed population for the corresponding occupation in the Occupation column.",
   "version": "1.0",
   "licenses": [{
     "url": "http://opendatacommons.org/licenses/pddl/",
@@ -86,7 +86,7 @@
   "ckan_extras": {
     "full_description": {
       "ckan_name": "Full Description",
-      "value": "Self-Employment by Occupation by County reports the total population of employed civilian workers aged 16 years and older by occupation. Business Types are presented as percentages of a given occupation for a given county. For example, for 2012-2016, there were approximately 320,110 Service employees in Connecticut, 14.6% of those employees worked in Government. 'Self-Employed, Incorporated' includes workers in their own incorporated businesses, 'Self-Employed, Not Incorporated' includes workers in their own non-incorporated businesses and unpaid family workers, 'Government' includes local, state, and federal government workers, 'Private, Profit' includes employees of for-profit private companies, 'Private, Not-for-profit' includes both wage and salary employees of not-for-profit private companies. These data originate from the American Community Survey (ACS) 5-Year estimates, table S2406.",
+      "value": "Self-Employment by Occupation by County reports the total population of employed civilian workers aged 16 years and older by occupation. In the Business Type column, individual Business Types are presented as percentages of the Total employed population for the corresponding occupation in the Occupation column. For example, for 2012-2016, there were approximately 320,110 Service employees in Connecticut, 14.6% of those employees worked in Government. 'Self-Employed, Incorporated' includes workers in their own incorporated businesses, 'Self-Employed, Not Incorporated' includes workers in their own non-incorporated businesses and unpaid family workers, 'Government' includes local, state, and federal government workers, 'Private, Profit' includes employees of for-profit private companies, 'Private, Not-for-profit' includes both wage and salary employees of not-for-profit private companies. These data originate from the American Community Survey (ACS) 5-Year estimates, table S2406.",
       "type": "string"
     },
     "suppression": {
