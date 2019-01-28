@@ -15,13 +15,13 @@
     "web": ""
   }],
   "author":[{
-    "name": "Jenna Daly",
-    "email": "jdaly@ctdata.org",
+    "name": "Connecticut Data Collaborative",
+    "email": "info@ctdata.org",
     "web": "http://ctdata.org"
   }],
   "contributor": [],
   "resources": [{
-    "path": "data/self-employment-occupation-county.csv",
+    "path": "data/self-employment-occupation-county-2017.csv",
     "format": "csv",
     "schema": {
       "fields": [{
@@ -41,14 +41,14 @@
           "type": "string",
           "dimension": true,
           "constraints": {
-            "enum": ["All", 
-                     "Management, business, science, and arts", 
+            "enum": ["All",
+                     "Management, business, science, and arts",
                      "Service",
-                     "Sales and office", 
+                     "Sales and office",
                      "Natural resources, construction, and maintenance",
                      "Production, transportation, and material moving"]
          }
-        }, {         
+        }, {
           "name": "Business Type",
           "type": "string",
           "dimension": true,
@@ -82,7 +82,7 @@
       }
     }
   ],
-  "last_modified": "03/07/2018",
+  "last_modified": "01/28/2019",
   "ckan_extras": {
     "full_description": {
       "ckan_name": "Full Description",
@@ -113,7 +113,7 @@
       "ckan_name": "Socrata Dataset Name",
       "value": "",
       "type": "string"
-    }, 
+    },
     "domain": {
       "ckan_name": "Domain",
       "value": "Economy",
@@ -147,12 +147,12 @@
     },
     "years_in_catalog": {
       "ckan_name": "Years in Catalog",
-      "value": ["2006-2010", "2007-2011", "2008-2012", "2009-2013", "2010-2014", "2011-2015", "2012-2016"],
+      "value": ["2006-2010", "2007-2011", "2008-2012", "2009-2013", "2010-2014", "2011-2015", "2012-2016", "2013-2017"],
       "type": "array"
     },
     "latest_year": {
       "ckan_name": "Latest Year Available",
-      "value": "2012-2016",
+      "value": "2013-2017",
       "type": "string"
     },
     "disabled_views": {
@@ -172,19 +172,19 @@
       "ckan_name": "Expected Number of Unique Geographies",
       "value": 9,
       "type": "string"
-    },     
-    "default": {      
+    },
+    "default": {
       "ckan_name": "Default",
       "value": {
         "County": "Connecticut",
-        "Year": ["2012-2016"],
+        "Year": ["2013-2017"],
         "Occupation": ["All"],
         "Business Type": ["Self-Employed, Incorporated", "Self-Employed, Not Incorporated"],
-        "Variable": "Employment", 
+        "Variable": "Employment",
         "Measure Type": "Percent"
       },
       "type": "object"
-    } 
+    }
   },
   "spot_checks": [
     {
@@ -200,8 +200,8 @@
         "type": "$match",
         "number type": "float",
         "value": 12.4
-      } 
-    }, 
+      }
+    },
     {
       "type": "$lookup",
       "filter": {
@@ -216,8 +216,8 @@
         "type": "$match",
         "number type": "float",
         "value": 0.3
-      } 
-    }, 
+      }
+    },
     {
       "type": "$lookup",
       "filter": {
@@ -232,8 +232,8 @@
         "type": "$match",
         "number type": "float",
         "value": 58
-      } 
-    }, 
+      }
+    },
     {
       "type": "$lookup",
       "filter": {
@@ -248,8 +248,8 @@
         "type": "$match",
         "number type": "int",
         "value": 796
-      } 
-    }, 
+      }
+    },
     {
       "type": "$lookup",
       "filter": {
@@ -264,7 +264,7 @@
         "type": "$match",
         "number type": "float",
         "value": 13.2
-      } 
+      }
     },
     {
       "type": "$lookup",
@@ -280,8 +280,8 @@
         "type": "$match",
         "number type": "float",
         "value": 1.4
-      } 
-    }, 
+      }
+    },
     {
       "type": "$lookup",
       "filter": {
@@ -296,35 +296,35 @@
         "type": "$match",
         "number type": "int",
         "value": 421566
-      } 
+      }
     }
   ],
   "dimension_groups": [
      {
-       "Measure Type": ["Number"], 
+       "Measure Type": ["Number"],
        "Business Type": ["Total"],
-       "Occupation": ["All", 
-                      "Management, business, science, and arts", 
+       "Occupation": ["All",
+                      "Management, business, science, and arts",
                       "Service",
-                      "Sales and office", 
+                      "Sales and office",
                       "Natural resources, construction, and maintenance",
                       "Production, transportation, and material moving"],
-       "Variable": ["Employment", "Margins of Error"]     
-     }, 
+       "Variable": ["Employment", "Margins of Error"]
+     },
      {
-       "Measure Type": ["Percent"], 
+       "Measure Type": ["Percent"],
        "Business Type": ["Self-Employed, Incorporated",
                          "Self-Employed, Not Incorporated",
                          "Government",
                          "Private, Profit",
                          "Private, Not-for-profit"],
-       "Occupation": ["All", 
-                      "Management, business, science, and arts", 
+       "Occupation": ["All",
+                      "Management, business, science, and arts",
                       "Service",
-                      "Sales and office", 
+                      "Sales and office",
                       "Natural resources, construction, and maintenance",
                       "Production, transportation, and material moving"],
-       "Variable": ["Employment", "Margins of Error"]     
+       "Variable": ["Employment", "Margins of Error"]
      }
   ]
 }
